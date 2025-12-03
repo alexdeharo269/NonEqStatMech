@@ -1,0 +1,16 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build & Run (MSYS2 MinGW64)",
+      "type": "shell",
+      "command": "C:\\msys64\\usr\\bin\\bash.exe",
+      "args": [
+        "-lc",
+        "export MSYSTEM=MINGW64 && cd \"$(echo ${fileDirname} | sed 's#^\\([A-Z]\\):#\\/\\L\\1#')\" && g++ -std=c++17 -O2 -v \"${fileBasename}\" -o \"${fileBasenameNoExtension}.exe\" && ./\"${fileBasenameNoExtension}.exe\""
+      ],
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}
